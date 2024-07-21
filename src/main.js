@@ -44,6 +44,7 @@ function handleLoadMore() {
 
 function fetchNewPage() {
   loadingIndicator.hidden = false;
+
   fetchImageName(searchQuery, page).finally(() => {
     loadingIndicator.hidden = true;
     const lightbox = new SimpleLightbox('.gallery-list a', {
@@ -61,7 +62,7 @@ function getBoundingClientRect() {
       .querySelector('.gallery-item')
       .getBoundingClientRect();
     window.scrollBy({
-      top: heightOfElement * 4,
+      top: heightOfElement * 2,
       behavior: 'smooth',
     });
     // console.log(heightOfElement);
