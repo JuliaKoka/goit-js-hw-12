@@ -48,14 +48,6 @@ function fetchNewPage() {
       captionsData: 'alt',
       captionDelay: 250,
     }).refresh();
-
-    if (page > 1) {
-      const { height: heightOfElement } = document.querySelector('.gallery');
-      window.scrollBy({
-        top: heightOfElement * 2,
-        behavior: 'smooth',
-      });
-    }
   });
 
   form.reset();

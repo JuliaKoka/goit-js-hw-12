@@ -19,26 +19,33 @@ export function createMarkup({
   <img class="gallery-image" src='${webformatURL}' data-source=${largeImageURL} alt='${formattedTags}'>
   </a>
   </div>
+
   <div class="img-data">
-  <ul class="img-data-list">
-  <li class="img-data-element">
-  <p class="img-data-fetched">Likes: </p>
-  <p class="img-data-fetched">${likes}</p>
-  </li>
-  <li class="img-data-element">
-  <p class="img-data-fetched">Views: </p>
-  <p class="img-data-fetched">${views}</p>
-  </li>
-  <li class="img-data-element">
-  <p class="img-data-fetched">Comments: </p>
-  <p class="img-data-fetched">${comments}</p>
-  </li>
-  <li class="img-data-element">
-  <p class="img-data-fetched">Downloads: </p>
-  <p class="img-data-fetched">${downloads}</p>
-  </li>
-  </ul>
+  
+  <div class="description">
+  <span class="bold">Likes: </span>
+  <span class="normal">${likes}</span>
   </div>
+
+
+   <div class="description">
+  <span class="bold">Likes: </span>
+  <span class="normal">${views}</span>
+  </div>
+
+
+  <div class="description">
+  <span class="bold">Likes: </span>
+  <span class="normal">${comments}</span>
+  </div>
+
+  <div class="description">
+  <span class="bold">Likes: </span>
+  <span class="normal">${downloads}</span>
+  </div>
+
+  </div>
+
   </li>`;
 }
 
