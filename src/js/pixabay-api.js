@@ -28,9 +28,9 @@ export async function fetchImageName(query, page) {
       throw new Error('No images found');
     }
 
-    if (page === 1) {
-      gallery.innerHTML = ''; // Очищаем предыдущие результаты при новом поиске
-    }
+    // if (page === 1) {
+    //   gallery.innerHTML = ''; // Очищаем предыдущие результаты при новом поиске
+    // }
 
     const listMarkup = createListMarkup(data.hits);
     gallery.insertAdjacentHTML('beforeend', listMarkup);
