@@ -33,6 +33,8 @@ function handleSubmit(event) {
   gallery.innerHTML = '';
   page = 1;
   fetchNewPage();
+
+  form.reset();
 }
 
 function handleLoadMore() {
@@ -48,7 +50,20 @@ function fetchNewPage() {
       captionsData: 'alt',
       captionDelay: 250,
     }).refresh();
-  });
 
-  form.reset();
+    getBoundingClientRect();
+  });
+}
+
+function getBoundingClientRect() {
+  if (page > 1) {
+    const { height: heightOfElement } = document
+      .querySelector('.gallery-item')
+      .getBoundingClientRect();
+    window.scrollBy({
+      top: heightOfElement * 2,
+      behavior: 'smooth',
+    });
+    // console.log(heightOfElement);
+  }
 }
