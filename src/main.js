@@ -43,10 +43,10 @@ function handleLoadMore() {
 }
 
 function fetchNewPage() {
-  loadingIndicator.hidden = false;
+  loadingIndicator.classList.remove('is-hidden');
 
   fetchImageName(searchQuery, page).finally(() => {
-    loadingIndicator.hidden = true;
+    loadingIndicator.classList.add('is-hidden');
     const lightbox = new SimpleLightbox('.gallery-list a', {
       captionsData: 'alt',
       captionDelay: 250,
