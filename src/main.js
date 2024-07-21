@@ -61,7 +61,7 @@ function getBoundingClientRect() {
       .querySelector('.gallery-item')
       .getBoundingClientRect();
     window.scrollBy({
-      top: heightOfElement * 2,
+      top: heightOfElement * 4,
       behavior: 'smooth',
     });
     // console.log(heightOfElement);
