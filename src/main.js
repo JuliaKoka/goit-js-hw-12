@@ -13,6 +13,7 @@ const loadingIndicator = document.querySelector('.loader');
 
 let searchQuery = '';
 let page = 1;
+let lightbox;
 
 form.addEventListener('submit', handleSubmit);
 loadMoreBtn.addEventListener('click', handleLoadMore);
@@ -47,7 +48,12 @@ function fetchNewPage() {
 
   fetchImageName(searchQuery, page).finally(() => {
     loadingIndicator.classList.add('is-hidden');
-    const lightbox = new SimpleLightbox('.gallery-list a', {
+
+    if (lightbox) {
+      lightbox.destroy();
+    }
+
+    lightbox = new SimpleLightbox('.gallery-list a', {
       captionsData: 'alt',
       captionDelay: 250,
     }).refresh();
